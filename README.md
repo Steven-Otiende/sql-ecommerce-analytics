@@ -377,8 +377,8 @@ For the complete analytical methodology, technical challenges, business interpre
 | [`01_data_cleaning.sql`](scripts/01_data_cleaning.sql)                   | Data staging, cleaning & transformation |
 | [`02_business_kpis.sql`](scripts/02_business_kpis.sql)                   | Sales & business KPI analysis           |
 | [`03_rfm_segmentation.sql`](scripts/03_rfm_segmentation.sql)             | Customer RFM segmentation               |
-| [`04_cohort_retention.sql`](scripts/04_cohort_retention.sql)             | Cohort & retention analysis             |
-| [`05_market_basket_analysis.sql`](scripts/05_market_basket_analysis.sql) | Product-pair analysis & optimization    |
+| [`04_cohort_retention.sql`](./scripts/04_cohort_retention.sql)            | Cohort & retention analysis             |
+| [`05_market_basket_analysis.sql`](./scripts/05_market_basket_analysis.sql) | Product-pair analysis & optimization    |
 
 ---
 
