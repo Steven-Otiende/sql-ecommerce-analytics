@@ -1,204 +1,186 @@
-# E-Commerce Customer Analytics & Business Intelligence — PostgreSQL
+# 🛒 E-Commerce Customer Analytics & Business Intelligence
 
-### Advanced SQL Data Analytics & Business Intelligence Portfolio Project
+### PostgreSQL SQL Analytics Portfolio Project
 
-**PostgreSQL | SQL | Customer Analytics | RFM Segmentation | Cohort Analysis | Market Basket Analysis**
+**Steven Ochieng Otiende**
+**Data Analyst | Business Intelligence Analyst | Statistics & Performance Analytics Specialist**
+
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat\&logo=postgresql\&logoColor=white)](https://www.postgresql.org/)
+[![SQL](https://img.shields.io/badge/SQL-Analytics-blue?style=flat)](#)
+[![RFM](https://img.shields.io/badge/RFM-Customer%20Segmentation-orange?style=flat)](#)
+[![Cohort Analysis](https://img.shields.io/badge/Cohort-Retention-green?style=flat)](#)
+[![Market Basket](https://img.shields.io/badge/Market%20Basket-Analysis-purple?style=flat)](#)
 
 ---
 
 ## 📌 Project Overview
 
-This project demonstrates an end-to-end **SQL analytics workflow using PostgreSQL** on the UCI Online Retail dataset containing **541,909 transaction records** covering December 2010 to December 2011.
+This project demonstrates an end-to-end **customer and transactional analytics workflow using PostgreSQL**.
 
-The analysis transforms raw transactional data into actionable business insights across:
+Using the **UCI Online Retail dataset**, the project transforms more than **541,000 transaction records** into actionable business intelligence covering:
 
-* Sales and revenue performance
-* Customer purchasing behavior
-* RFM customer segmentation
-* Cohort-based customer retention
-* Product-pair purchasing patterns
-* SQL query optimization and performance improvement
-
-The project was designed to demonstrate not only **SQL and PostgreSQL proficiency**, but also the ability to translate business questions into analytical solutions and actionable recommendations.
-
----
-
-## 📊 Key Business Results
-
-| KPI / Finding                             |                    Result |
-| ----------------------------------------- | ------------------------: |
-| Raw transaction records                   |               **541,909** |
-| Fulfilled orders                          |                **22,064** |
-| Identified customers                      |                 **4,339** |
-| Calculated transaction revenue            |        **£10,644,560.42** |
-| Peak revenue month                        |         **November 2011** |
-| Peak monthly revenue                      |         **£1,509,496.33** |
-| RFM Champions                             |         **955 customers** |
-| Champions' share of RFM-segmented revenue |                 **64.5%** |
-| At-Risk / Need Attention customers        |                   **655** |
-| December 2010 M12 customer retention      |                 **26.6%** |
-| Top product-pair co-occurrence            | **330 qualifying orders** |
-
-> **Key insight:** A relatively small group of high-value customers generated a disproportionately large share of historical customer revenue, highlighting the importance of customer retention and targeted loyalty strategies.
-
----
-
-## 🎯 Business Questions
-
-The project addresses five major business questions:
-
-1. **How is the business performing in terms of orders and revenue?**
-2. **Which products generate the most revenue?**
-3. **Who are the most valuable, loyal, and at-risk customers?**
-4. **How well are customers retained after their first purchase?**
-5. **Which products are frequently purchased together?**
-
----
-
-## 🔄 Analytics Workflow
-
-```text
-Raw UCI Dataset
-      ↓
-PostgreSQL Raw Staging
-      ↓
-Data Cleaning & Type Conversion
-      ↓
-Data Validation & Indexing
-      ↓
-Business KPI Analysis
-      ↓
-Customer RFM Segmentation
-      ↓
-Cohort Retention Analysis
-      ↓
-Product-Pair / Market Basket Analysis
-      ↓
-Business Insights & Recommendations
-```
-
----
-
-## 🛠️ Technical Skills Demonstrated
-
-### SQL & PostgreSQL
-
-* Common Table Expressions (CTEs)
-* Window functions
-* `NTILE()` customer scoring
-* Aggregations
-* Conditional aggregation
-* `CASE` expressions
-* Date/time transformations
-* Self-joins
-* Temporary tables
-* Views
-* Data type conversion
-* NULL handling
-* Composite indexing
-* Query performance optimization
-
-### Data Analytics
-
-* KPI development
-* Revenue analysis
+* Sales performance
 * Customer segmentation
-* RFM analysis
-* Cohort analysis
-* Retention analysis
-* Product affinity analysis
-* Data quality validation
-* Business interpretation
-* Actionable recommendations
+* Customer retention
+* Product purchasing behavior
+* Cross-selling opportunities
+* SQL query optimization
+
+The objective was not simply to query data, but to demonstrate how **SQL can be used to solve practical business problems and support data-driven decision-making**.
 
 ---
 
-# 📈 Key Analyses
+## 📊 Key Results
 
-## 1. Sales Performance & Business KPIs
+| Business Metric                 |            Result |
+| ------------------------------- | ----------------: |
+| Transaction records analyzed    |       **541,909** |
+| Fulfilled orders                |        **22,064** |
+| Identified customers            |         **4,339** |
+| Calculated transaction revenue  |       **£10.64M** |
+| Peak revenue month              | **November 2011** |
+| Peak monthly revenue            |        **£1.51M** |
+| RFM Champions                   |           **955** |
+| Champions' share of RFM revenue |         **64.5%** |
+| December 2010 M12 retention     |         **26.6%** |
+| Top product pair                |    **330 orders** |
 
-The analysis identified:
+---
 
-* **22,064 fulfilled orders**
-* **4,339 customers with identified Customer IDs**
-* **£10.64M in calculated transaction revenue**
-* **November 2011** as the strongest revenue month
-* Peak monthly revenue of **£1.51M**
+## 🔍 Business Questions
 
-Monthly sales analysis also revealed substantial growth in order activity toward the end of 2011.
+The analysis was designed to answer five core business questions:
 
-**Business implication:** The late-year sales acceleration suggests opportunities for seasonal inventory planning, campaign optimization, and operational capacity planning.
+### 1. Sales Performance
+
+**How is revenue and order activity changing over time?**
+
+### 2. Customer Value
+
+**Which customers are the most valuable and engaged?**
+
+### 3. Customer Retention
+
+**How well are customers retained after their first purchase?**
+
+### 4. Product Affinity
+
+**Which products are frequently purchased together?**
+
+### 5. SQL Performance
+
+**How can complex analytical queries be optimized for better performance?**
+
+---
+
+# 📈 Key Analysis
+
+## 1. Sales Performance Analysis
+
+Core business KPIs were calculated using PostgreSQL, including:
+
+* Total fulfilled orders
+* Identified customers
+* Transaction revenue
+* Monthly revenue
+* Monthly order activity
+* Product-level performance
+
+### Key Finding
+
+**November 2011** was the strongest revenue month, generating approximately **£1.51 million**.
+
+This suggests strong seasonal demand and provides opportunities for improved inventory, marketing, staffing, and fulfillment planning.
 
 **SQL:** [`02_business_kpis.sql`](scripts/02_business_kpis.sql)
 
 ---
 
-## 2. Customer RFM Segmentation
+## 2. 👥 RFM Customer Segmentation
 
-Customers were segmented using three dimensions:
+Customers were segmented using **Recency, Frequency, and Monetary (RFM)** analysis.
 
-* **Recency** — number of days since the customer's most recent purchase
-* **Frequency** — number of fulfilled orders
-* **Monetary** — historical customer spend
-
-Customers were scored into quintiles using PostgreSQL's `NTILE(5)` window function.
-
-### Customer Segments
+PostgreSQL window functions, including `NTILE()`, were used to score customers and assign business-oriented segments.
 
 | Segment                  | Customers | Avg. Recency | Avg. Orders | Historical Revenue |
 | ------------------------ | --------: | -----------: | ----------: | -----------------: |
-| Champions                |       955 |    11.4 days |        11.1 |         £5,746,639 |
-| Loyal Customers          |       993 |    33.1 days |         3.8 |         £1,592,044 |
-| At-Risk / Need Attention |       655 |   146.7 days |         3.4 |           £896,952 |
-| Potential Loyalist       |       910 |    73.2 days |         1.2 |           £338,496 |
-| Lost / Dormant           |       684 |   275.0 days |         1.1 |           £286,597 |
-| Recent New Customers     |       142 |    17.7 days |         1.0 |            £50,681 |
+| Champions                |       955 |    11.4 days |        11.1 |             £5.75M |
+| Loyal Customers          |       993 |    33.1 days |         3.8 |             £1.59M |
+| At-Risk / Need Attention |       655 |   146.7 days |         3.4 |              £897K |
+| Potential Loyalist       |       910 |    73.2 days |         1.2 |              £338K |
+| Lost / Dormant           |       684 |   275.0 days |         1.1 |              £287K |
+| Recent New Customers     |       142 |    17.7 days |         1.0 |               £51K |
 
-**Key insight:** Champions represent approximately **22% of RFM-segmented customers** but account for **64.5% of RFM-segmented historical revenue**.
+### Key Finding
 
-**Business implication:** High-value customer retention should be a major priority. At-Risk and Lost/Dormant customers can be targeted through structured reactivation campaigns, while Potential Loyalists can be encouraged toward repeat purchasing.
+**Champions represent approximately 22% of RFM-segmented customers but generate 64.5% of RFM-segmented historical revenue.**
 
-**SQL:** [`03_rfm_segmentation.sql`](scripts/03_rfm_segmentation.sql)
+This indicates substantial concentration of customer value among highly engaged customers.
 
-**Visualization:**
+### Business Opportunity
+
+* Protect high-value customers through retention strategies.
+* Reactivate At-Risk customers.
+* Convert Potential Loyalists into repeat customers.
+* Encourage Recent New Customers toward a second purchase.
+
+### Visualization
 
 ![RFM Customer Segment Chart](assets/rfm_customer_segment_chart.png)
 
+**SQL:** [`03_rfm_segmentation.sql`](scripts/03_rfm_segmentation.sql)
+
 ---
 
-## 3. Cohort Retention Analysis
+## 3. 📅 Cohort Retention Analysis
 
-Customers were grouped according to the month of their first purchase and tracked across subsequent months.
+Customers were grouped according to their **first purchase month** and tracked across subsequent months.
 
-The December 2010 cohort contained **885 customers**, of whom **235 remained active in month 12**, representing **26.6% customer retention**.
+### Key Finding
 
-> **Important:** This analysis measures active customer retention, not revenue retention.
+The **December 2010 cohort** contained **885 customers**.
 
-Later cohorts do not have observable M12 retention where the required 12-month observation window extends beyond the end of the dataset in December 2011.
+After 12 months:
 
-**Business implication:** Cohort analysis helps identify differences in customer retention over time and provides a foundation for improving customer onboarding, repeat-purchase campaigns, and customer lifecycle strategies.
+**235 customers remained active.**
 
-**SQL:** [`04_cohort_retention.sql`](scripts/04_cohort_retention.sql)
+### M12 Retention: **26.6%**
 
-**Visualization:**
+This analysis provides a clearer view of customer lifecycle performance than aggregate customer counts alone.
+
+### Business Opportunity
+
+Cohort analysis can support:
+
+* Customer onboarding improvements
+* Repeat-purchase campaigns
+* Lifecycle marketing
+* Retention benchmarking
+* Identification of weak retention periods
+
+### Visualization
 
 ![Cohort Retention Chart](assets/cohort_retention_chart.png)
 
+**SQL:** [`04_cohort_retention.sql`](scripts/04_cohort_retention.sql)
+
+> **Note:** Retention measures active customers rather than revenue retention.
+
 ---
 
-## 4. Product-Pair / Market Basket Analysis
+## 4. 🛍️ Market Basket / Product-Pair Analysis
 
-Product co-occurrence analysis was used to identify products frequently purchased within the same qualifying orders.
+Product co-occurrence analysis was used to identify products frequently purchased within the same qualifying order.
 
-The analysis:
+The workflow included:
 
-1. Excluded cancelled transactions.
-2. Removed service and postage-related stock codes.
-3. Deduplicated invoice-product combinations.
-4. Limited unusually large baskets.
-5. Identified frequently occurring products.
-6. Used a self-join to identify product pairs purchased together.
-7. Ranked product pairs by qualifying order count.
+* Removing cancelled transactions
+* Excluding postage/service items
+* Deduplicating invoice-product combinations
+* Filtering unusually large baskets
+* Identifying frequently occurring products
+* Performing product self-joins
+* Ranking product pairs by order frequency
 
 ### Top Product Pair
 
@@ -206,95 +188,160 @@ The analysis:
 
 **330 qualifying orders**
 
-Other strong product relationships included:
+### Business Opportunity
 
-* Regency Teacup variants
-* Bakelike Alarm Clock variants
-* Jumbo Bag variants
-* Wooden picture frames
-* Regency Cake Stand + Regency Teacup
+These relationships can support:
 
-**Key insight:** Customers frequently purchase complementary products as well as multiple variants within the same product family.
-
-**Business implication:** These relationships can support:
-
+* Product bundles
 * Cross-selling
-* Product bundling
 * "Complete the set" recommendations
+* Checkout recommendations
 * Multi-buy promotions
-* Checkout upselling
-* Store merchandising optimization
+* Merchandising optimization
 
-> **Analytical note:** This analysis measures product **co-occurrence**. It is not a complete association-rule mining implementation because support, confidence, and lift were not calculated.
+### Visualization
+
+![Market Basket Product Pairs](assets/market_basket_chart.png)
 
 **SQL:** [`05_market_basket_analysis.sql`](scripts/05_market_basket_analysis.sql)
 
-**Visualization:**
-
-![Market Basket Product Pairs](assets/market_basket_chart.png)
+> **Analytical note:** This analysis measures product co-occurrence rather than full association-rule mining. Support, confidence, and lift were not calculated.
 
 ---
 
 # ⚡ SQL Performance Optimization
 
-One of the project's practical challenges was optimizing the product-pair analysis.
+The market basket analysis required an expensive **self-join across transactional data**.
 
-A direct transaction-level self-join was computationally expensive because of the large number of transaction records.
+Instead of joining the full dataset directly, the analysis was optimized by reducing the data before the expensive operation.
 
-The optimized approach involved:
+### Optimization techniques
 
-1. Removing cancelled orders.
-2. Excluding non-merchandise/service stock codes.
-3. Deduplicating invoice-product combinations.
-4. Creating a temporary analytical table.
-5. Adding a composite index on:
-
-```sql
-(invoiceno, stockcode)
-```
-
-6. Filtering unusually large baskets.
-7. Restricting product candidates to products appearing in at least 20 qualifying orders.
-8. Performing the self-join only after these reductions.
+* Data filtering before joins
+* Deduplication
+* Temporary analytical tables
+* Composite indexing
+* Candidate product filtering
+* Basket-size filtering
 
 ### Measured Performance
 
-| Optimization Step                | Approximate Time |
-| -------------------------------- | ---------------: |
-| Temporary table + index creation |  **~12 seconds** |
-| Optimized basket query           |  **~17 seconds** |
+| Operation                        | Approx. Time |
+| -------------------------------- | -----------: |
+| Temporary table + index creation |  **~12 sec** |
+| Optimized basket query           |  **~17 sec** |
 
-This demonstrates practical PostgreSQL performance optimization by reducing the volume of data involved in expensive analytical operations.
-
----
-
-# 🧹 Data Quality & Engineering
-
-The original dataset presented an encoding issue during PostgreSQL import because some fields contained the **£ currency symbol**.
-
-The initial typed import failed with a UTF-8 encoding error.
-
-The problem was resolved by:
-
-* Loading the raw CSV into a text-based staging table.
-* Using Windows-1252-compatible encoding during import.
-* Performing explicit type conversion during the cleaning stage.
-* Converting quantities, prices, customer IDs, and timestamps into appropriate analytical data types.
-* Creating indexes on frequently queried fields.
-* Performing basic validation checks after transformation.
-
-This reflects a realistic data analyst workflow where **data ingestion, transformation, and quality issues must be addressed before meaningful analysis can begin**.
-
-**SQL:** [`01_data_cleaning.sql`](scripts/01_data_cleaning.sql)
+This demonstrates practical PostgreSQL optimization techniques for analytical workloads.
 
 ---
 
-# 📁 Repository Structure
+# 💡 Business Insights
+
+The combined analysis produced several actionable findings.
+
+### 1. Customer value is concentrated
+
+A relatively small group of highly engaged customers generates a disproportionately large share of historical revenue.
+
+**Action:** Prioritize Champions and Loyal Customers with retention and loyalty initiatives.
+
+### 2. There is a significant reactivation opportunity
+
+**655 customers** were classified as At-Risk / Need Attention.
+
+**Action:** Develop targeted reactivation campaigns based on previous purchase behavior.
+
+### 3. Retention declines over the customer lifecycle
+
+The December 2010 cohort retained **26.6% of customers at M12**.
+
+**Action:** Strengthen post-purchase engagement and second-purchase conversion.
+
+### 4. Product relationships create cross-selling opportunities
+
+The strongest product pair appeared together in **330 qualifying orders**.
+
+**Action:** Use product affinity to inform bundles and recommendations.
+
+### 5. Seasonality should influence planning
+
+November 2011 recorded approximately **£1.51M** in revenue.
+
+**Action:** Use historical seasonality to inform inventory, marketing, staffing, and fulfillment planning.
+
+---
+
+# 🧠 Analytical Workflow
+
+```text
+Raw Transaction Data
+        ↓
+PostgreSQL Staging
+        ↓
+Data Cleaning & Validation
+        ↓
+Business KPI Analysis
+        ↓
+RFM Customer Segmentation
+        ↓
+Cohort Retention Analysis
+        ↓
+Product-Pair Analysis
+        ↓
+SQL Performance Optimization
+        ↓
+Business Insights
+        ↓
+Recommendations
+```
+
+---
+
+# 🛠️ Technical Skills Demonstrated
+
+### SQL & PostgreSQL
+
+* Common Table Expressions (CTEs)
+* Window Functions
+* `NTILE()`
+* `RANK()`
+* Conditional Aggregation
+* `CASE`
+* `COUNT(DISTINCT ...)`
+* Date & Time Functions
+* Self-Joins
+* Temporary Tables
+* Composite Indexes
+* Query Optimization
+
+### Data Preparation
+
+* Data staging
+* Encoding handling
+* Data type conversion
+* Missing-value handling
+* Transaction filtering
+* Data validation
+* Feature engineering
+
+### Analytical Methods
+
+* Business KPI Analysis
+* RFM Segmentation
+* Cohort Analysis
+* Customer Retention Analysis
+* Product Affinity Analysis
+* Market Basket Analysis
+
+---
+
+# 📂 Project Structure
 
 ```text
 sql-ecommerce-analytics/
 │
 ├── README.md
+├── CASE_STUDY.md
 ├── LICENSE
 │
 ├── scripts/
@@ -315,56 +362,31 @@ sql-ecommerce-analytics/
 
 ---
 
-# 💡 Business Recommendations
+# 📑 Project Documentation
 
-Based on the analytical findings, the following actions could be considered:
+### 📘 Full Case Study
 
-### 1. Protect High-Value Customers
+For the complete analytical methodology, technical challenges, business interpretation, recommendations, limitations, and future enhancements:
 
-Develop loyalty initiatives, personalized offers, and priority customer experiences for the **Champions** segment.
+👉 **[Read the Full PostgreSQL Analytics Case Study](CASE_STUDY.md)**
 
-### 2. Reactivate At-Risk Customers
+### 💻 SQL Scripts
 
-Use targeted email promotions, product recommendations, and time-limited incentives to re-engage **At-Risk / Need Attention** customers.
-
-### 3. Encourage Second Purchases
-
-Target **Recent New Customers** and **Potential Loyalists** with follow-up campaigns designed to increase repeat-purchase rates.
-
-### 4. Create Product Bundles
-
-Frequently co-purchased products can be packaged into bundles to increase convenience and potentially raise average order value.
-
-### 5. Use Product-Variant Recommendations
-
-Strong relationships between product variants provide opportunities for **"Complete the Set"**, multi-buy, and related-product recommendations.
-
-### 6. Plan for Seasonal Demand
-
-The November revenue peak suggests the need for stronger inventory, marketing, staffing, and operational planning around high-demand periods.
-
----
-
-# ⚠️ Analytical Limitations
-
-* The dataset covers only **December 2010 through December 2011**.
-* Customer analysis is limited to transactions with an available `CustomerID`.
-* Missing customer identifiers should not automatically be interpreted as guest checkouts.
-* RFM monetary values represent **historical customer spend**, not modeled Customer Lifetime Value (CLV).
-* Cohort retention measures **active customer retention**, not revenue retention.
-* M12 retention cannot be observed for cohorts whose 12-month observation window extends beyond December 2011.
-* Product-pair analysis measures **co-occurrence**, not full association rules.
-* Support, confidence, and lift were not calculated.
-* `DOTCOM POSTAGE` is included in product revenue analysis but excluded from product-pair basket analysis because it represents a service/postage item rather than merchandise.
-* Historical revenue should not be interpreted as current revenue or current customer value.
+| Script                                                                   | Purpose                                 |
+| ------------------------------------------------------------------------ | --------------------------------------- |
+| [`01_data_cleaning.sql`](scripts/01_data_cleaning.sql)                   | Data staging, cleaning & transformation |
+| [`02_business_kpis.sql`](scripts/02_business_kpis.sql)                   | Sales & business KPI analysis           |
+| [`03_rfm_segmentation.sql`](scripts/03_rfm_segmentation.sql)             | Customer RFM segmentation               |
+| [`04_cohort_retention.sql`](scripts/04_cohort_retention.sql)             | Cohort & retention analysis             |
+| [`05_market_basket_analysis.sql`](scripts/05_market_basket_analysis.sql) | Product-pair analysis & optimization    |
 
 ---
 
 # 📚 Dataset
 
-## UCI Online Retail Dataset
+The project uses the **UCI Online Retail Dataset**.
 
-**Source:** UCI Machine Learning Repository — Online Retail Dataset
+**Source:** UCI Machine Learning Repository
 
 **Citation:**
 
@@ -372,44 +394,52 @@ Chen, D. (2015). *Online Retail* [Dataset]. UCI Machine Learning Repository.
 
 **DOI:** `10.24432/C5BW33`
 
-The dataset contains transactional records for a UK-based online retail business covering December 2010 through December 2011.
-
-The raw dataset is **not included in this repository**. Users should obtain the original dataset from the UCI Machine Learning Repository and comply with the applicable dataset terms of use.
-
-The SQL scripts in this project assume that the dataset has been imported into PostgreSQL and transformed according to the data-cleaning workflow documented in [`01_data_cleaning.sql`](scripts/01_data_cleaning.sql).
+The raw dataset is **not included in this repository**. See [`dataset/README.md`](dataset/README.md) for dataset information and reproduction guidance.
 
 ---
 
-# 🚀 What This Project Demonstrates
+# ⚠️ Analytical Limitations
 
-This project demonstrates the ability to:
-
-* ✓ Clean and structure raw transactional data in PostgreSQL
-* ✓ Translate business questions into SQL analytical queries
-* ✓ Build reusable analytical views
-* ✓ Apply advanced SQL window functions
-* ✓ Perform customer segmentation using RFM methodology
-* ✓ Measure customer retention using cohort analysis
-* ✓ Identify product purchasing patterns
-* ✓ Optimize computationally expensive SQL operations
-* ✓ Handle real-world data encoding and data-quality issues
-* ✓ Interpret analytical results from a business perspective
-* ✓ Translate data findings into actionable business recommendations
+* The dataset covers December 2010 – December 2011.
+* Customer-level analysis is limited to records with available `CustomerID`.
+* Missing Customer IDs should not automatically be interpreted as guest customers.
+* RFM Monetary values represent historical transaction value, not predicted Customer Lifetime Value.
+* Cohort retention measures active customers rather than revenue retention.
+* M12 retention is only observable for cohorts with sufficient follow-up time.
+* Product-pair analysis measures co-occurrence rather than complete association-rule mining.
+* Support, confidence, and lift were not calculated.
+* Postage/service items are excluded from product-pair analysis but relevant transaction revenue is retained in sales analysis.
 
 ---
 
-# 👨‍💻 Author
+# 🚀 Future Enhancements
 
-## Steven Ochieng Otiende
+Potential extensions include:
+
+* Customer Lifetime Value modeling
+* Customer churn prediction
+* Revenue forecasting
+* Product demand forecasting
+* Association rules using support, confidence & lift
+* Product recommendation systems
+* Customer clustering
+* Interactive Power BI dashboard
+* Automated analytical pipeline
+
+---
+
+# 👨‍💻 About the Author
+
+**Steven Ochieng Otiende**
 
 **Data Analyst | Business Intelligence Analyst | Statistics & Performance Analytics Specialist**
 
-**Nairobi, Kenya**
-
 **Core Tools:** PostgreSQL | SQL | Python | Power BI | Excel | R | STATA | SPSS
+
+I specialize in transforming data into **actionable insights, performance intelligence, and business recommendations** through statistical analysis, SQL, data visualization, and business intelligence.
 
 ---
 
-### ⭐ Portfolio Focus
+## ⭐ Portfolio Focus
 
 > **Turning transactional data into reliable analysis, business intelligence, and actionable business decisions using SQL.**
